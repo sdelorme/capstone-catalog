@@ -1,18 +1,49 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <h1>{{ message }}</h1>
+    <div v-for="student in students" v-bind:key="student.id">{{ student.first_name }} {{ student.last_name }}</div>
   </div>
 </template>
 
-<script>
-// @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
+<style></style>
 
+<script>
+import axios from "axios";
 export default {
-  name: "Home",
-  components: {
-    HelloWorld,
+  data: function () {
+    return {
+      message: "Team Ben, Seth, Thom",
+      students: [
+        {
+          first_name: "Maya",
+          last_name: "Angelou",
+        },
+        {
+          first_name: "Spin",
+          last_name: "Drift",
+        },
+      ],
+      capstones: [
+        {
+          name: "Icy Hot",
+          description: "First it's icy, then it's hot.",
+          url: "https://images-na.ssl-images-amazon.com/images/I/71t2faI0HjL._AC_SL1500_.jpg",
+        },
+      ],
+    };
+  },
+  created: function () {},
+  methods: {
+    capstoneIndex: function () {
+      axios.get("./api/capstones").then((response) => {
+        this.capstones = response.data;
+      });
+    },
+    studentIndex: function () {
+      axios.get("./api/students").then((response) => {
+        this.students = response.data;
+      });
+    },
   },
 };
 </script>
