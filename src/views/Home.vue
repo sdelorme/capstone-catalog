@@ -3,8 +3,10 @@
     <h1>{{ message }}</h1>
     <div v-for="student in students" v-bind:key="student.id">
       Name: {{ student.first_name }} {{ student.last_name }}
+      <br />
+      Capstones: {{ student.capstones }}
+      <hr />
     </div>
-    <div v-for="capstone in capstones" v-bind:key="capstone.id">Capstone Name: {{ capstone.name }}</div>
   </div>
 </template>
 

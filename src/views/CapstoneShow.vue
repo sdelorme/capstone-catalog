@@ -1,6 +1,7 @@
 <template>
   <div class="home">
-    <h1>name: {{ currentCapstone.name }}</h1>
+    <h1>{{ currentCapstone.student }}'s {{ message }}</h1>
+    <p>name: {{ currentCapstone.name }}</p>
     <p>description: {{ currentCapstone.description }}</p>
     <p>url: {{ currentCapstone.url }}</p>
     <p>screenshot: {{ currentCapstone.screenshot }}</p>
@@ -15,7 +16,7 @@ import axios from "axios";
 export default {
   data: function () {
     return {
-      message: "Welcome to Vue.js!",
+      message: "Capstone",
       currentCapstone: {},
     };
   },
