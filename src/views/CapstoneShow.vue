@@ -4,7 +4,7 @@
     <p>name: {{ currentCapstone.name }}</p>
     <p>description: {{ currentCapstone.description }}</p>
     <p>url: {{ currentCapstone.url }}</p>
-    <p>screenshot: {{ currentCapstone.screenshot }}</p>
+    <span><img v-bind:src="currentCapstone.screenshot" alt="hello" /></span>
     <p>student: {{ currentCapstone.student }}</p>
   </div>
 </template>
