@@ -20,7 +20,9 @@
 .img {
   width: 300px;
 }
-body {background-color: coral;}
+body {
+  background-color: rgb(255, 252, 80);
+}
 </style>
 
 <script>
