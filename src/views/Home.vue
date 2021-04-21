@@ -6,9 +6,9 @@
         <div v-if="capstone.student_id === student.id">
           Name: {{ student.first_name }} {{ student.last_name }}
           <br />
-          <router-link v-bind:to="`/capstones/${capstone.id}`">Capstones: {{ capstone.name }}</router-link>
+          <router-link v-bind:to="`/capstones/${capstone.id}`">Capstone: {{ capstone.name }}</router-link>
           <br />
-          <span><img v-bind:src="capstone.screenshot" alt="hello" /></span>
+          <span><img class="img" v-bind:src="capstone.screenshot" alt="hello" /></span>
           <hr />
         </div>
       </div>
@@ -16,14 +16,19 @@
   </div>
 </template>
 
-<style></style>
+<style>
+.img {
+  width: 300px;
+}
+body {background-color: coral;}
+</style>
 
 <script>
 import axios from "axios";
 export default {
   data: function () {
     return {
-      message: "Team Ben, Seth, Thom",
+      message: "Welcome to the Capstone Catalog!",
       students: [],
       capstones: [],
     };
